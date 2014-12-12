@@ -12,11 +12,11 @@ namespace captureandsaver_cli
         {
             //Create Bitmap / Graphics
             Bitmap bmp = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-            Graphics g = Graphics.FromImage(bmp);
+            Graphics gdigrap = Graphics.FromImage(bmp);
             //Copy all screen elements (CopyFromScreen)
-            g.CopyFromScreen(new Point(0, 0), new Point(0, 0), bmp.Size);
+            gdigrap.CopyFromScreen(new Point(0, 0), new Point(0, 0), bmp.Size);
             //Graphics Dispose
-            g.Dispose();
+            gdigrap.Dispose();
             //Save ("Screenshot-YYYY-MM-DD_HH-MM-SS.png")
             //TODO: ハードコードはよくなさそうなので後で設定用のiniとかで変更できるようにする
             bmp.Save(System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) 
